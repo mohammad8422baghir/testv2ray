@@ -69,7 +69,7 @@ jobs:
           -Pandroid.injected.signing.key.password=123456
 
     - name: Upload APK
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: my-vpn-apk
         path: V2rayNG/app/build/outputs/apk/**/release/*.apk
