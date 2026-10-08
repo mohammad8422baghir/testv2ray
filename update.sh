@@ -1,3 +1,7 @@
+#!/bin/bash
+# Run inside the v2rayNG folder (the one containing V2rayNG, .github): bash update.sh
+set -e
+cat > V2rayNG/app/src/main/java/com/v2ray/ang/AngApplication.kt <<'KTEOF'
 package com.v2ray.ang
 
 import android.app.Application
@@ -96,3 +100,8 @@ class AngApplication : Application() {
         }
     }
 }
+KTEOF
+git add -A
+git commit -m "multi-profile test build" || true
+git push -u origin main
+echo "DONE - now check the Actions tab on GitHub"
